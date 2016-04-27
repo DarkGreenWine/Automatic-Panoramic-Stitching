@@ -7,6 +7,7 @@
 img = imread('../data/building1.JPG');
 
 [x,y] = size(img);
+theta_phi = zeros(2*x,2*y);
 
 for i = 1:x
 	for j = 1:y
