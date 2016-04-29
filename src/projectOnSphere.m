@@ -1,7 +1,7 @@
 % This function will take an image 
 % And the registration parameters
 % Convert it to spherical system
-function [ out ] = projectOnSphere(img,f)
+function [ out ] = projectOnSphere(I,f)
 %I = imread('building1.JPG');
 %f = 400;
 width = size(I,2);
@@ -18,7 +18,7 @@ for i = 1:width
         curr_x = i-x_center; 
         curr_y = j-y_center; 
 
-	    mag_XYZ = sqrt(curr_x^2 + curr_y^2 + F^2);
+	    mag_XYZ = sqrt(curr_x^2 + curr_y^2 + f^2);
         phi = asin(curr_y/mag_XYZ);
         theta = asin(curr_x/(mag_XYZ*cos(phi)));
 
